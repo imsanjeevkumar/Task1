@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e0f7fa;
+            border: 1px solid #00796b;
+            display: inline-block;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ping Service</h1>
+    <p>Click the button to send a ping request and get a response!</p>
+    <button onclick="sendPing()">Send Ping</button>
+    
+    <div id="response"></div>
+
+    <script>
+        function sendPing() {
+            // Send a GET request to the Flask /ping route
+            fetch('/ping')
+                .then(response => response.json())
+                .then(data => {
+                    // Display the response message
+                    document.getElementById('response').innerHTML = 
+                        `<strong>Ping Recorded</strong><br>ID: ${data.id}<br>Timestamp: ${data.timestamp}`;
+                })
+                .catch(error => {
+                    // Handle errors
+                    document.getElementById('response').innerHTML = 'Error sending ping. Please try again.';
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+</html>
