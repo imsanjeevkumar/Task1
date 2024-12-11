@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO, format='%(message)s')
 
 # Setup MongoDB connection
 # Update the connection string as per your MongoDB setup
-mongo_uri = os.getenv('MONGO_URI', 'mongodb://localhost:27017/')
+mongo_uri = os.getenv('MONGO_URI', 'mongodb://mongodb:27017/')
 client = MongoClient(mongo_uri)
 db = client.ping_database
 collection = db.pings
