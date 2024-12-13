@@ -18,3 +18,6 @@ spec:
           image: mongo:latest
           ports:
             - containerPort: 27017
+          envFrom:
+            - configMapRef:
+                name: mongodb-env-variable  # Reference the ConfigMap for non-sensitive envs

@@ -4,7 +4,7 @@ metadata:
   name: application-env-variable
   namespace: prod
 data:
-  MONGO_URI: "mongodb://172.31.17.192:30085/"
+  MONGO_URI: "mongodb://mongodb-service:27017/"
   MONGO_INITDB_DATABASE: "ping_database"
 # Flask Configuration
   FLASK_APP: "app.py"
