@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo-deployment
+  namespace: prod
 spec:
   replicas: 3  # Ensure 3 replicas for high availability
   selector:

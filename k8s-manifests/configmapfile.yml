@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: application-env-variable
+  namespace: prod
 data:
   MONGO_URI: "mongodb://mongodb:27017/"
   MONGO_INITDB_DATABASE: "ping_database"

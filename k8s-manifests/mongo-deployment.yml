@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongodb-deployment
+  namespace: prod
 spec:
   replicas: 1
   selector:
@@ -14,6 +15,6 @@ spec:
     spec:
       containers:
         - name: mongodb
-          image: mongodb:latest
+          image: mongo:latest
           ports:
             - containerPort: 27017
