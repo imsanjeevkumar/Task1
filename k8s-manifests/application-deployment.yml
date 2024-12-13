@@ -16,7 +16,7 @@ spec:
         - name: demo-container
           image: ersanjeev/task1-web:latest # Replace with  Docker image
           ports:
-            - containerPort: 8000  # application will run on port 8000 inside container 
+            - containerPort: 5000  # application will run on port 8000 inside container 
           envFrom:
             - configMapRef:
                 name: application-env-variable  # Reference the ConfigMap for non-sensitive envs
