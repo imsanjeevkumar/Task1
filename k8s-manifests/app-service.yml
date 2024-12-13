@@ -11,5 +11,5 @@ spec:
       port: 5000           # Expose on port 80 within the cluster
       targetPort: 5000    # Container port to which the traffic will be forwarded
       nodePort: 30080     # External port on each node to access the application
-  type: LoadBalancer
+  type: NodePort
   
