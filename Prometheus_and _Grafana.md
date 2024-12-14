@@ -38,12 +38,15 @@ User with sudo access (see the Initial Server Setup with Ubuntu 22.04 tutorial f
 Install some command-line tools .i.e. – eksctl, kubectl, and  Helm Chart.
 
 **Monitoring AWS EKS using Prometheus and Grafana
+
 Step#1:Install and Setup kubectl on Ubuntu Server**
 
 Installing and setting up kubectl configures the command-line interface essential for managing  Kubernetes clusters
 
 sudo curl --silent --location -o /usr/local/bin/kubectl   https://s3.us-west-2.amazonaws.com/amazon-eks/1.22.6/2022-03-09/bin/linux/amd64/kubectl
+
 sudo chmod +x /usr/local/bin/kubectl 
+
 kubectl version --short --client
 
 **Step#2:Install and Setup eksctl on Ubuntu Server**
