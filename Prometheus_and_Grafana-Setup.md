@@ -41,9 +41,9 @@ AWS Ubuntu 22.04 LTS Instance.
 User with sudo access (see the Initial Server Setup with Ubuntu 22.04 tutorial for details).
 Install some command-line tools .i.e. – eksctl, kubectl, and  Helm Chart.
 
-**Monitoring AWS EKS using Prometheus and Grafana
+****Monitoring AWS EKS using Prometheus and Grafana**
 
-Step#1:Install and Setup kubectl on Ubuntu Server**
+**Step#1:Install and Setup kubectl on Ubuntu Server****
 
 Installing and setting up kubectl configures the command-line interface essential for managing  Kubernetes clusters
 
@@ -194,7 +194,7 @@ network bandwidth & packet rate
 
 **Step#10:Clean up/Deprovision-Deleting the Cluster**
 
-Now we will delete all our resources.
+**Now we will delete all our resources.**
 
 eksctl delete cluster --name eks-cluster
 
