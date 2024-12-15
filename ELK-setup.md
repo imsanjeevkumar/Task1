@@ -16,10 +16,11 @@ sudo apt-get install nginx
 
 **Step 2: Add Elastic Repository**
 
-1. Enter the following into a terminal window to import the PGP 
-key for Elastic:
+1. Enter the following into a terminal window to import the PGP
+   
+**key for Elastic:**
 
-wget -qO - https://artifacts.elastic.co/GPG-KEY-... | sudo apt-key add -
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add
 
 **3. Next, install the apt-transport-https package:**
 
