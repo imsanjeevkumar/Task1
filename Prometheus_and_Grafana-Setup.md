@@ -45,7 +45,7 @@ Install some command-line tools .i.e. – eksctl, kubectl, and  Helm Chart.
 
 **Step#1:Install and Setup kubectl on Ubuntu Server****
 
-Installing and setting up kubectl configures the command-line interface essential for managing  Kubernetes clusters
+**Installing and setting up kubectl configures the command-line interface essential for managing  Kubernetes clusters, Execute the below command**
 
 sudo curl --silent --location -o /usr/local/bin/kubectl   https://s3.us-west-2.amazonaws.com/amazon-eks/1.22.6/2022-03-09/bin/linux/amd64/kubectl
 
@@ -55,7 +55,7 @@ kubectl version --short --client
 
 **Step#2:Install and Setup eksctl on Ubuntu Server**
 
-Installing and setting up eksctl simplifies the process of creating and managing Amazon EKS clusters with its command-line utility.
+**Installing and setting up eksctl simplifies the process of creating and managing Amazon EKS clusters with its command-line utility, Execute the below command**
 
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 
@@ -68,7 +68,7 @@ eksctl version
 
 **Step#3:Install Helm Chart on Ubuntu Server**
 
-Installing Helm Charts involves deploying pre-configured packages onto Kubernetes clusters.
+**Installing Helm Charts involves deploying pre-configured packages onto Kubernetes clusters, Execute the below command**
 
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 
@@ -82,7 +82,7 @@ chmod 700 get_helm.sh
 
 The following script installs Helm, a vital tool for Kubernetes application management. Helm serves as a package manager within the open-source Kubernetes platform, simplifying application installation, updates, and removal.
 
-You can verify the helm installation using
+**You can verify the helm installation, Execute the below command**
 
 helm version
 
@@ -90,13 +90,13 @@ Now, here we are done with the installation of kubectl, eksctl and Helm
 
 **Step#4:Creating an Amazon EKS Cluster using eksctl**
 
-Creating an Amazon EKS Cluster using eksctl streamlines the process of setting up and managing Kubernetes clusters on AWS. It provides a simplified command-line interface for creating EKS clusters with predefined configurations, ensuring efficient cluster deployment.
+**Creating an Amazon EKS Cluster using eksctl streamlines the process of setting up and managing Kubernetes clusters on AWS. It provides a simplified command-line interface for creating EKS clusters with predefined configurations, ensuring efficient cluster deployment. Execute the below command**
 
 eksctl create cluster --name=eks-cluster --region=eu-central-1 --version=1.29 --nodegroup-name=my-nodes --node-type=t3.medium --managed --nodes=2 --nodes-min=2 --nodes-max=3
 
 Kindly note that it would take 15–20 minutes for this installation to complete. Once it is done, you can go to your AWS Console and look for the eksctl clusters
 
-We can verify the cluster by logging into the AWS Console
+**We can verify the cluster by logging into the AWS Console, Execute the below command**
 
 eksctl get cluster --name eks-cluster --region eu-central-1
 
@@ -108,7 +108,7 @@ aws eks update-kubeconfig --name eks-cluster --region eu-central-1
 
 Connect to EKS cluster using kubectl commands
 
-To view the list of worker nodes as part of EKS cluster.
+**To view the list of worker nodes as part of EKS cluster, Execute the below command.**
 
 kubectl get nodes
 
@@ -116,7 +116,7 @@ kubectl get ns
 
 **Step#5:Add Helm Stable Charts for Your Local Client**
 
-We need to add the Helm Stable Charts for your local client. Execute the below command:
+**We need to add the Helm Stable Charts for your local client. Execute the below command:**
 
 helm repo add stable https://charts.helm.sh/stable
 
@@ -194,7 +194,7 @@ network bandwidth & packet rate
 
 **Step#10:Clean up/Deprovision-Deleting the Cluster**
 
-**Now we will delete all our resources.**
+**Now we will delete all our resources using below command.**
 
 eksctl delete cluster --name eks-cluster
 
