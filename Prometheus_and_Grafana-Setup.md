@@ -114,7 +114,7 @@ kubectl get nodes
 
 kubectl get ns
 
-Step#5:Add Helm Stable Charts for Your Local Client
+**Step#5:Add Helm Stable Charts for Your Local Client**
 
 We need to add the Helm Stable Charts for your local client. Execute the below command:
 
