@@ -68,6 +68,7 @@ There will be no output if successful.
 **2. Enable Elasticsearch to start on boot:**
 
 sudo systemctl enable elasticsearch.service
+
 Test Elasticsearch
 
 **Step 3: Install Kibana**
