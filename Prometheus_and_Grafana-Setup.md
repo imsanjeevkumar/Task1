@@ -1,6 +1,7 @@
 **Monitoring AWS EKS using Prometheus and Grafana**
 
 **What is Amazon EKS?**
+
 Amazon EKS (Elastic Kubernetes Service) is a managed Kubernetes service provided by Amazon Web Services (AWS). It simplifies the process of deploying, managing, and scaling containerized applications using Kubernetes on AWS infrastructure.
 
 With Amazon EKS, users can leverage the power of Kubernetes without the complexity of managing the underlying infrastructure. EKS handles tasks such as cluster provisioning, upgrades, and scaling, allowing developers to focus on building and deploying applications.
@@ -8,16 +9,19 @@ With Amazon EKS, users can leverage the power of Kubernetes without the complexi
 Example: Imagine a software development team wants to deploy a microservices-based application using containers. Instead of managing the Kubernetes cluster themselves, they can use Amazon EKS. They define their application’s architecture, specify resource requirements, and deploy it to the EKS cluster. Amazon EKS takes care of provisioning and managing the Kubernetes control plane, worker nodes, networking, and other infrastructure components. This allows the team to focus on developing their application while benefiting from the scalability, reliability, and flexibility of Kubernetes on AWS.
 
 **What is Grafana?**
+
 Grafana is an open source tool for performing data analytics, retrieving metrics that make sense of large amounts of data, and monitoring our apps using nice configurable dashboards.
 
 Grafana integrates with a wide range of data sources, including Graphite, Prometheus, Influx DB, ElasticSearch, MySQL, PostgreSQL, and others. When connected to supported data sources, it provides web-based charts, graphs, and alerts.
 
 **What is Prometheus?**
+
 Prometheus is an open-source monitoring and alerting toolkit designed for reliability and scalability in modern, dynamic environments. Developed by the Cloud Native Computing Foundation, Prometheus excels at collecting and storing time-series data, allowing users to gain valuable insights into the performance and health of their applications and infrastructure.
 
 With its powerful query language and support for multi-dimensional data, Prometheus has become a popular choice for monitoring systems within cloud-native ecosystems.
 
 **Why Use Helm?**
+
 Helm serves as a package manager tailored for Kubernetes environments. With Helm, deploying complex applications or managing multiple resources becomes simplified and streamlined.
 
 Here is why leveraging Helm is advantageous:
