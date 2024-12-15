@@ -9,6 +9,7 @@ sudo apt-get install nginx
 check your localhost type in URL
 
 ===========================================================
+
 Step 2: Add Elastic Repository
 1. Enter the following into a terminal window to import the PGP 
 key for Elastic:
@@ -74,7 +75,9 @@ sudo nano /etc/kibana/kibana.yml
 #elasticsearch.hosts: ["http://localhost:9200"]
 
 The above-mentioned lines should look as follows:
+
 ===============================================
+
 server.port: 5601
 
 server.host: "localhost"
@@ -111,6 +114,7 @@ http://localhost:5601
 
 
 ===================================================================================
+
 STEP 4: Install Logstash
 Logstash is a tool that collects data from different sources. The data it collects is parsed by Kibana and stored in Elasticsearch.
 
