@@ -28,7 +28,7 @@ sudo apt-get install apt-transport-https
 
 **4. Add the Elastic repository to your system’s repository list:**
 
-echo "deb https://artifacts.elastic.co/packages... stable main" | sudo tee –a /etc/apt/sources.list.d/elastic-7.x.list
+echo "deb https://artifacts.elastic.co/packages/7.x/stable main" | sudo tee –a /etc/apt/sources.list.d/elastic-7.x.list
 
 **Step 3: Install Elasticsearch**
 
