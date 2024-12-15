@@ -1,5 +1,7 @@
 **Monitoring AWS EKS using Prometheus and Grafana**
 
+**The process of configuring Prometheus and Grafana for monitoring AWS EKS. By integrating these tools, you can effectively track metrics, set alerts, and visualize data, ensuring optimal performance for your EKS cluster | Monitoring AWS EKS using Prometheus and Grafana.**
+
 **What is Amazon EKS?**
 
 Amazon EKS (Elastic Kubernetes Service) is a managed Kubernetes service provided by Amazon Web Services (AWS). It simplifies the process of deploying, managing, and scaling containerized applications using Kubernetes on AWS infrastructure.
