@@ -71,7 +71,9 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 
 ./get_helm.sh
+
  DESIRED_VERSION=v3.8.2 bash get_helm.sh
+ 
  curl -L https://git.io/get_helm.sh | bash -s -- --version v3.8.2
 
 The following script installs Helm, a vital tool for Kubernetes application management. Helm serves as a package manager within the open-source Kubernetes platform, simplifying application installation, updates, and removal.
@@ -85,6 +87,8 @@ Now, here we are done with the installation of kubectl, eksctl and Helm
 **Step#4:Creating an Amazon EKS Cluster using eksctl**
 
 Creating an Amazon EKS Cluster using eksctl streamlines the process of setting up and managing Kubernetes clusters on AWS. It provides a simplified command-line interface for creating EKS clusters with predefined configurations, ensuring efficient cluster deployment.
+
+eksctl create cluster --name=eks-cluster --region=eu-central-1 --version=1.29 --nodegroup-name=my-nodes --node-type=t3.medium --managed --nodes=2 --nodes-min=2 --nodes-max=3
 
 Kindly note that it would take 15–20 minutes for this installation to complete. Once it is done, you can go to your AWS Console and look for the eksctl clusters
 
