@@ -1,4 +1,4 @@
-git**Monitoring AWS EKS using Prometheus and Grafana**
+**Monitoring AWS EKS using Prometheus and Grafana**
 
 **The process of configuring Prometheus and Grafana for monitoring AWS EKS. By integrating these tools, you can effectively track metrics, set alerts, and visualize data, ensuring optimal performance for your EKS cluster | Monitoring AWS EKS using Prometheus and Grafana.**
 
