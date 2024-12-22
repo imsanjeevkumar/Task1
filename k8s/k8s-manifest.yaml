@@ -49,7 +49,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: mongo:latest
+        image: ersanjeev/web1
         ports:
         - containerPort: 27017
         volumeMounts:
@@ -98,7 +98,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: flask-mongo-app:latest
+        image: ersanjeev/web1
         ports:
         - containerPort: 5000
         envFrom:
