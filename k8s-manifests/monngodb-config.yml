@@ -5,6 +5,3 @@ metadata:
   namespace: prod
 data:
   MONGO_INITDB_DATABASE: "ping_database"
-
- 
-  
