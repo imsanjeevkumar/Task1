@@ -11,6 +11,4 @@ spec:
       port: 27017
       targetPort: 27017
       nodePort: 30085    # External port on each node to access the application
-  type: NodePort
-  
-      
+  type: ClusterIp
