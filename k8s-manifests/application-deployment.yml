@@ -20,7 +20,7 @@ spec:
             - containerPort: 5000  # application will run on port 8000 inside container 
           envFrom:
             - configMapRef:
-                name: application-env-variable  # Reference the ConfigMap for non-sensitive envs
+                name: application-env-variable
           resources:
             requests:
               memory: "100Mi"
