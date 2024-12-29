@@ -3,7 +3,7 @@ name: Build and Publish to Docker Hub
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 concurrency:
@@ -11,8 +11,9 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  IMAGE_TAG: ${{ github.ref_name == 'master' && 'latest' || github.ref_name | replace('/', '-') }}
-  DOCKER_REPO: ersanjeev/task1 # Replace with your Docker Hub repository
+  # Set to "latest" for main branch, or branch name for other branches
+  IMAGE_TAG: ${{ github.ref_name == 'main' && 'latest' || github.ref_name }}
+  DOCKER_REPO: ersanjeev/task1  # Replace with your Docker Hub repository
 
 jobs:
   build-and-publish:
@@ -24,11 +25,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1
+
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
@@ -41,31 +43,30 @@ jobs:
 
       - name: Infer Tag from Branch
         id: infer-tag
+        # Get the branch name from the ref, and replace / with - to make it a valid tag
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
         run: |
-          if [[ "${{ github.ref_name }}" == "master" ]]; then
+          if [[ $BRANCH_NAME == "main" ]]; then
             echo "tag=latest" >> $GITHUB_OUTPUT
           else
-            sanitized_tag=$(echo "${{ github.ref_name }}" | sed -e 's/\//-/g')
-            echo "tag=$sanitized_tag" >> $GITHUB_OUTPUT
+            echo "tag=$(echo $BRANCH_NAME | sed -e 's/\//-/g')" >> $GITHUB_OUTPUT
           fi
 
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile # Update if Dockerfile is in a subdirectory
+          file: ./Dockerfile  # Update path if Dockerfile is not in ./docker/
           pull: true
           push: true
           tags: |
-            ${{ env.DOCKER_REPO }}:${{ steps.infer-tag.outputs.tag }}
+            ${{ env.DOCKER_REPO }}:${{ steps.infer-tag.outputs.tag }},
             ${{ env.DOCKER_REPO }}:${{ github.sha }}
 
-      - name: Update Kube Config
-        run: |
-          aws eks update-kubeconfig --region eu-central-1 --name eksdemo
+      - name: update kube config
+        run: aws eks update-kubeconfig --region eu-central-1 --name three-tier-cluster
 
       - name: Deploy to EKS
         run: |
-          kubectl apply -f ./k8s-manifests/application-deployment.yml
-        env:
-          KUBECONFIG: ~/.kube/config
+          kubectl apply -f ./k8s-manifests/application-deployment.yml 
