@@ -65,7 +65,7 @@ jobs:
             ${{ env.DOCKER_REPO }}:${{ github.sha }}
 
       - name: update kube config
-        run: aws eks update-kubeconfig --region eu-central-1 --name eksdemo
+        run: aws eks update-kubeconfig --region eu-central-1 --name three-tier-cluster
 
       - name: Deploy to EKS
         run: |
