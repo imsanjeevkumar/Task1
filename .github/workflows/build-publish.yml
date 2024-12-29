@@ -13,7 +13,7 @@ concurrency:
 env:
   # Set to "latest" for master branch, or branch name for other branches
   IMAGE_TAG: ${{ github.ref_name == 'master' && 'latest' || github.ref_name }}
-  DOCKER_REPO: ersanjeev/devops-challanges  # Replace with your Docker Hub repository
+  DOCKER_REPO: ersanjeev/task1  # Replace with your Docker Hub repository
 
 jobs:
   build-and-publish:
