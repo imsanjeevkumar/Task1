@@ -66,6 +66,7 @@ Move the extracted binary to /usr/local/bin
 sudo mv /tmp/eksctl /usr/local/bin
 
 Check whether the installation has been successfully done using
+
 eksctl version
 
 **Step#3:Install Helm Chart on Ubuntu Server**
@@ -202,19 +203,3 @@ eksctl delete cluster --name eks-cluster
 
 **Conclusion:**
 In conclusion, setting up  Prometheus and Grafana dashboards for monitoring AWS EKS offers a robust solution for observing and managing your Kubernetes clusters. With Prometheus collecting metrics and Grafana providing visualization capabilities, users gain insights into cluster health, resource utilization, and performance metrics.
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
