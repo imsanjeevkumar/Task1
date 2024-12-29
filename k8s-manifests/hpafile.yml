@@ -8,8 +8,8 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: demo-deployment
-  minReplicas: 3  # Minimum replicas for availability
-  maxReplicas: 10  # Maximum replicas for scaling up based on load
+  minReplicas: 2  # Minimum replicas for availability
+  maxReplicas: 5  # Maximum replicas for scaling up based on load
   metrics:
   - type: Resource
     resource:
