@@ -69,4 +69,5 @@ jobs:
 
       - name: Deploy to EKS
         run: |
+          kubectl apply -f namespace.yml 
           kubectl apply -f ./k8s-manifests/application-deployment.yml 
