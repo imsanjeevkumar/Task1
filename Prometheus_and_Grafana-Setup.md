@@ -183,8 +183,9 @@ use the above command to get the password , the user name is admin
 
 Now, view the Dashboard in  Grafana
 
-the Entire data of the cluster
-where we can able to see the entire data of the EKS cluster
+**the Entire data of the cluster
+where we can able to see the entire data of the EKS cluster**
+
 1. CPU and RAM use
 2. pods in a specific namespace
 3. Pod up history
