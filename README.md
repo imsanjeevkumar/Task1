@@ -52,5 +52,3 @@
     Application metrics, collect and visualize
     Logs Managment, collect and visualize logs
 
-# Submission
-  Please create a public GitHub repository and send the link to your repository once you have completed the project to development@united-remote.com.
